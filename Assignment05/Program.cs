@@ -228,25 +228,50 @@
 
             #region Q10: Write a Program to Print One Dimensional Array in Reverse Order
 
-            Console.Write("Enter the size of the array: ");
-            int n = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the size of the array: ");
+            //int n = int.Parse(Console.ReadLine());
 
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the elements of the array:");
-            for (int i = 0; i < n; i++)
-            {
-                arr[i] = int.Parse(Console.ReadLine());
-            }
+            //int[] arr = new int[n];
+            //Console.WriteLine("Enter the elements of the array:");
+            //for (int i = 0; i < n; i++)
+            //{
+            //    arr[i] = int.Parse(Console.ReadLine());
+            //}
 
-            Console.WriteLine("\nArray in reverse order:");
-            for (int i = n - 1; i >= 0; i--)
-            {
-                Console.Write(arr[i] + " ");
-            }
+            //Console.WriteLine("\nArray in reverse order:");
+            //for (int i = n - 1; i >= 0; i--)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
 
 
             #endregion
 
+            #region Q11: Explain the difference between passing (Value type parameters) by value and by reference then write a suitable c# example.
+
+            //In C#, pass by value creates a copy of the variable and does not affect the original
+            //while pass by reference passes the actual reference[location], so changes inside the method affect the original variable
+
+            int a = 10;
+            Console.WriteLine("Before pass by value: " + a);
+            Dummy1(a);
+            Console.WriteLine("After pass by value: " + a); // a remains the same
+
+            int b = 20;
+            Console.WriteLine("Before pass by reference: " + b);
+            Dummy2(ref b);
+            Console.WriteLine("After pass by reference: " + b); // b changes
+
+            #endregion
+
         }
+
+        static void Dummy1(int x) { 
+            x = 50; 
+        }
+        static void Dummy2(ref int y) {
+            y = 100; 
+        }
+
     }
 }
