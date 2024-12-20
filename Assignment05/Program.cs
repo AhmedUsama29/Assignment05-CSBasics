@@ -113,26 +113,59 @@
 
             #region Q6: Write a program in C# Sharp to find the second largest element in an array.
 
-            int[] arr = { 12, 35, 1, 10, 34, 1 ,55};
+            //int[] arr = { 12, 35, 1, 10, 34, 1 ,55};
 
-            Array.Sort(arr);
-            Array.Reverse(arr);
+            //Array.Sort(arr);
+            //Array.Reverse(arr);
 
-            int largest = arr[0];
-            int secondLargest = -99999999;
+            //int largest = arr[0];
+            //int secondLargest = -99999999;
 
-            for (int i = 1; i < arr.Length; i++)
+            //for (int i = 1; i < arr.Length; i++)
+            //{
+            //    if (arr[i] < largest)
+            //    {
+            //        secondLargest = arr[i];
+            //        break;
+            //    }
+            //}
+
+
+            //    Console.WriteLine("The second largest element is: " + secondLargest);
+
+
+            #endregion
+
+            #region Q7: 
+
+            Console.Write("Enter the size of the array: ");
+            int n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter the elements of the array:");
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++)
             {
-                if (arr[i] < largest)
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            int maxDistance = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i + 1; j < n; j++)
                 {
-                    secondLargest = arr[i];
-                    break;
+                    if (arr[i] == arr[j])
+                    {
+                        int distance = j - i;
+                        if (distance > maxDistance)
+                        {
+                            maxDistance = distance;
+                        }
+                    }
                 }
             }
 
-           
-                Console.WriteLine("The second largest element is: " + secondLargest);
-            
+            Console.WriteLine("The longest distance between two equal cells is: " + maxDistance);
 
             #endregion
         }
