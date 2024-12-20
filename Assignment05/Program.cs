@@ -277,17 +277,27 @@
 
             #region Q13: Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
 
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
+
+            //if (IsPrime(number))
+            //{
+            //    Console.WriteLine(number + " is a prime number.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(number + " is not a prime number.");
+            //}
+
+            #endregion
+
+            #region Q14: 
+
             Console.Write("Enter a number: ");
             int number = int.Parse(Console.ReadLine());
 
-            if (IsPrime(number))
-            {
-                Console.WriteLine(number + " is a prime number.");
-            }
-            else
-            {
-                Console.WriteLine(number + " is not a prime number.");
-            }
+            long result = Factorial(number);
+            Console.WriteLine("The factorial of " + number + " is: " + result);
 
             #endregion
 
@@ -320,6 +330,16 @@
                     return false;
             }
             return true;
+        }
+
+        static int Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 1; i <= num; i++)
+            {
+                result *= i; // Multiply the result by each number from 1 to num
+            }
+            return result;
         }
 
     }
