@@ -353,7 +353,7 @@
             int result = 1;
             for (int i = 1; i <= num; i++)
             {
-                result *= i; // Multiply the result by each number from 1 to num
+                result *= i; 
             }
             return result;
         }
