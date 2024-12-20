@@ -301,19 +301,19 @@
 
             #endregion
 
-            #region Q15: 
+            #region Q15:  Create a function named "ChangeChar" to modify a letter in a certain position (0 based) of a string, replacing it with a different letter .
 
-            Console.Write("Enter a string: ");
-            string input = Console.ReadLine();
+            //Console.Write("Enter a string: ");
+            //string input = Console.ReadLine();
 
-            Console.Write("Enter the position of the character to change: ");
-            int position = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the position of the character to change: ");
+            //int position = int.Parse(Console.ReadLine());
 
-            Console.Write("Enter the new character: ");
-            char newChar = char.Parse(Console.ReadLine());
+            //Console.Write("Enter the new character: ");
+            //char newChar = char.Parse(Console.ReadLine());
 
-            string result = ChangeChar(input, position, newChar);
-            Console.WriteLine("Modified string: " + result);
+            //string result = ChangeChar(input, position, newChar);
+            //Console.WriteLine("Modified string: " + result);
 
             #endregion
 
