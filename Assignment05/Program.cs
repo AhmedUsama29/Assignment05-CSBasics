@@ -228,25 +228,149 @@
 
             #region Q10: Write a Program to Print One Dimensional Array in Reverse Order
 
-            Console.Write("Enter the size of the array: ");
-            int n = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the size of the array: ");
+            //int n = int.Parse(Console.ReadLine());
 
-            int[] arr = new int[n];
-            Console.WriteLine("Enter the elements of the array:");
-            for (int i = 0; i < n; i++)
-            {
-                arr[i] = int.Parse(Console.ReadLine());
-            }
+            //int[] arr = new int[n];
+            //Console.WriteLine("Enter the elements of the array:");
+            //for (int i = 0; i < n; i++)
+            //{
+            //    arr[i] = int.Parse(Console.ReadLine());
+            //}
 
-            Console.WriteLine("\nArray in reverse order:");
-            for (int i = n - 1; i >= 0; i--)
-            {
-                Console.Write(arr[i] + " ");
-            }
+            //Console.WriteLine("\nArray in reverse order:");
+            //for (int i = n - 1; i >= 0; i--)
+            //{
+            //    Console.Write(arr[i] + " ");
+            //}
 
 
             #endregion
 
+            #region Q11: Explain the difference between passing (Value type parameters) by value and by reference then write a suitable c# example.
+
+            //In C#, pass by value creates a copy of the variable and does not affect the original
+            //while pass by reference passes the actual reference[location], so changes inside the method affect the original variable
+
+            //int a = 10;
+            //Console.WriteLine("Before pass by value: " + a);
+            //Dummy1(a);
+            //Console.WriteLine("After pass by value: " + a); // a remains the same
+
+            //int b = 20;
+            //Console.WriteLine("Before pass by reference: " + b);
+            //Dummy2(ref b);
+            //Console.WriteLine("After pass by reference: " + b); // b changes
+
+            #endregion
+
+            #region Q12: Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
+
+            //int sum = SumOfDigits(number);
+
+            //Console.WriteLine("The sum of the digits of the number " + number + " is: " + sum);
+
+            #endregion
+
+            #region Q13: Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
+
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
+
+            //if (IsPrime(number))
+            //{
+            //    Console.WriteLine(number + " is a prime number.");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(number + " is not a prime number.");
+            //}
+
+            #endregion
+
+            #region Q14:   Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter .
+
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
+
+            //long result = Factorial(number);
+            //Console.WriteLine("The factorial of " + number + " is: " + result);
+
+            #endregion
+
+            #region Q15: 
+
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
+            Console.Write("Enter the position of the character to change: ");
+            int position = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter the new character: ");
+            char newChar = char.Parse(Console.ReadLine());
+
+            string result = ChangeChar(input, position, newChar);
+            Console.WriteLine("Modified string: " + result);
+
+            #endregion
+
         }
+
+        static void Dummy1(int x) { 
+            x = 50; 
+        }
+        static void Dummy2(ref int y) {
+            y = 100; 
+        }
+
+        static int SumOfDigits(int num)
+        {
+            int sum = 0;
+            while (num > 0)
+            {
+                sum += num % 10;
+                num /= 10;
+            }
+            return sum;
+        }
+
+        static bool IsPrime(int num)
+        {
+            if (num <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
+        }
+
+        static int Factorial(int num)
+        {
+            int result = 1;
+            for (int i = 1; i <= num; i++)
+            {
+                result *= i; // Multiply the result by each number from 1 to num
+            }
+            return result;
+        }
+
+        static string ChangeChar(string str, int pos, char newChar)
+        {
+            if (pos < 0 || pos >= str.Length)
+            {
+                return "Invalid position!";
+            }
+
+            char[] charArray = str.ToCharArray();
+
+            charArray[pos] = newChar;
+
+            return new string(charArray);
+        }
+
     }
 }
