@@ -275,6 +275,22 @@
 
             #endregion
 
+            #region Q13: Create a function named "IsPrime", which receives an integer number and retuns true if it is prime, or false if it is not .
+
+            Console.Write("Enter a number: ");
+            int number = int.Parse(Console.ReadLine());
+
+            if (IsPrime(number))
+            {
+                Console.WriteLine(number + " is a prime number.");
+            }
+            else
+            {
+                Console.WriteLine(number + " is not a prime number.");
+            }
+
+            #endregion
+
         }
 
         static void Dummy1(int x) { 
@@ -293,6 +309,17 @@
                 num /= 10;
             }
             return sum;
+        }
+
+        static bool IsPrime(int num)
+        {
+            if (num <= 1) return false;
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                    return false;
+            }
+            return true;
         }
 
     }
