@@ -136,36 +136,50 @@
 
             #endregion
 
-            #region Q7: 
+            #region Q7: write a program find the longest distance between Two equal cells. In this example. The distance is measured by the number Of cells
 
-            Console.Write("Enter the size of the array: ");
-            int n = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the size of the array: ");
+            //int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Enter the elements of the array:");
-            int[] arr = new int[n];
-            for (int i = 0; i < n; i++)
+            //Console.WriteLine("Enter the elements of the array:");
+            //int[] arr = new int[n];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    arr[i] = int.Parse(Console.ReadLine());
+            //}
+
+            //int maxDistance = 0;
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //    for (int j = i + 1; j < n; j++)
+            //    {
+            //        if (arr[i] == arr[j])
+            //        {
+            //            int distance = j - i;
+            //            if (distance > maxDistance)
+            //            {
+            //                maxDistance = distance;
+            //            }
+            //        }
+            //    }
+            //}
+
+            //Console.WriteLine("The longest distance between two equal cells is: " + maxDistance);
+
+            #endregion
+
+            #region Q8: Given a list of space separated words, reverse the order of the words.
+
+            Console.WriteLine("Enter the sentence you want to reverse: ");
+            string str = Console.ReadLine();
+
+            string[] arr = str.Split(' ');
+
+            for (int i = arr.Length - 1; i >= 0; i--)
             {
-                arr[i] = int.Parse(Console.ReadLine());
+                Console.Write($"{arr[i]} ");
             }
-
-            int maxDistance = 0;
-
-            for (int i = 0; i < n; i++)
-            {
-                for (int j = i + 1; j < n; j++)
-                {
-                    if (arr[i] == arr[j])
-                    {
-                        int distance = j - i;
-                        if (distance > maxDistance)
-                        {
-                            maxDistance = distance;
-                        }
-                    }
-                }
-            }
-
-            Console.WriteLine("The longest distance between two equal cells is: " + maxDistance);
 
             #endregion
         }
