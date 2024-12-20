@@ -291,13 +291,29 @@
 
             #endregion
 
-            #region Q14: 
+            #region Q14:   Create an iterative (non-recursive) function to calculate the factorial of the number specified as parameter .
 
-            Console.Write("Enter a number: ");
-            int number = int.Parse(Console.ReadLine());
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
 
-            long result = Factorial(number);
-            Console.WriteLine("The factorial of " + number + " is: " + result);
+            //long result = Factorial(number);
+            //Console.WriteLine("The factorial of " + number + " is: " + result);
+
+            #endregion
+
+            #region Q15: 
+
+            Console.Write("Enter a string: ");
+            string input = Console.ReadLine();
+
+            Console.Write("Enter the position of the character to change: ");
+            int position = int.Parse(Console.ReadLine());
+
+            Console.Write("Enter the new character: ");
+            char newChar = char.Parse(Console.ReadLine());
+
+            string result = ChangeChar(input, position, newChar);
+            Console.WriteLine("Modified string: " + result);
 
             #endregion
 
@@ -340,6 +356,20 @@
                 result *= i; // Multiply the result by each number from 1 to num
             }
             return result;
+        }
+
+        static string ChangeChar(string str, int pos, char newChar)
+        {
+            if (pos < 0 || pos >= str.Length)
+            {
+                return "Invalid position!";
+            }
+
+            char[] charArray = str.ToCharArray();
+
+            charArray[pos] = newChar;
+
+            return new string(charArray);
         }
 
     }
