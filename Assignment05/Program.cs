@@ -185,47 +185,68 @@
 
             #region Q9: Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of first array on second array and print second array.
 
-            
-                Console.Write("Enter the number of rows: ");
-                int rows = int.Parse(Console.ReadLine());
 
-                Console.Write("Enter the number of columns: ");
-                int cols = int.Parse(Console.ReadLine());
+            //Console.Write("Enter the number of rows: ");
+            //int rows = int.Parse(Console.ReadLine());
 
-                int[,] arr1 = new int[rows, cols];
-                int[,] arr2 = new int[rows, cols];
+            //Console.Write("Enter the number of columns: ");
+            //int cols = int.Parse(Console.ReadLine());
 
-                Console.WriteLine("Enter values for the first array:");
-                for (int i = 0; i < rows; i++)
-                {
-                    for (int j = 0; j < cols; j++)
-                    {
-                        Console.Write($"Enter value for arr1[{i},{j}]: ");
-                        arr1[i, j] = int.Parse(Console.ReadLine());
-                    }
-                }
+            //int[,] arr1 = new int[rows, cols];
+            //int[,] arr2 = new int[rows, cols];
 
-                for (int i = 0; i < rows; i++)
-                {
-                    for (int j = 0; j < cols; j++)
-                    {
-                        arr2[i, j] = arr1[i, j];
-                    }
-                }
+            //Console.WriteLine("Enter values for the first array:");
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < cols; j++)
+            //    {
+            //        Console.Write($"Enter value for arr1[{i},{j}]: ");
+            //        arr1[i, j] = int.Parse(Console.ReadLine());
+            //    }
+            //}
 
-                Console.WriteLine("\nThe second array is:");
-                for (int i = 0; i < rows; i++)
-                {
-                    for (int j = 0; j < cols; j++)
-                    {
-                        Console.Write(arr2[i, j] + "\t");
-                    }
-                    Console.WriteLine();
-                }
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < cols; j++)
+            //    {
+            //        arr2[i, j] = arr1[i, j];
+            //    }
+            //}
+
+            //Console.WriteLine("\nThe second array is:");
+            //for (int i = 0; i < rows; i++)
+            //{
+            //    for (int j = 0; j < cols; j++)
+            //    {
+            //        Console.Write(arr2[i, j] + "\t");
+            //    }
+            //    Console.WriteLine();
+            //}
 
 
-        #endregion
+            #endregion
 
+            #region Q10: Write a Program to Print One Dimensional Array in Reverse Order
+
+            Console.Write("Enter the size of the array: ");
+            int n = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[n];
+            Console.WriteLine("Enter the elements of the array:");
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            Console.WriteLine("\nArray in reverse order:");
+            for (int i = n - 1; i >= 0; i--)
+            {
+                Console.Write(arr[i] + " ");
+            }
+
+
+            #endregion
+
+        }
     }
-}
 }
