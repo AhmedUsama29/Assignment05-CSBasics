@@ -69,25 +69,46 @@
 
             #region Q4: Write a program in C# Sharp to count the frequency of each element of an array.
 
+            //int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 5, 7, 1 };
+            //int count = 0;
+            //int[] sorted = new int[arr.Length];
+            //sorted = arr;
+            //Array.Sort(sorted);
+
+            //for (int i = 0; i < arr.Length - 1; i++)
+            //{
+            //    if (sorted[i] == sorted[i + 1])
+            //    {
+            //        count++;
+            //    }
+            //    else {
+            //        Console.WriteLine($"Number {sorted[i]} is repeated {count + 1} times");
+            //        count = 0;
+            //    }
+
+            //}
+
+            #endregion
+
+            #region Q5: Write a program in C# Sharp to find maximum and minimum element in an array
+
             int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 5, 7, 1 };
-            int count = 0;
-            int[] sorted = new int[arr.Length];
-            sorted = arr;
-            Array.Sort(sorted);
 
-            for (int i = 0; i < arr.Length - 1; i++)
+            int max = -999999999;
+            int min = 999999999;
+
+            for (int i = 0; i < arr.Length; i++)
             {
-                if (sorted[i] == sorted[i + 1])
+                if (max < arr[i]) {
+                    max = arr[i];
+                }
+                if (min > arr[i])
                 {
-                    count++;
+                    min = arr[i];
                 }
-                else {
-                    Console.WriteLine($"Number {sorted[i]} is repeated {count + 1} times");
-                    count = 0;
-                }
-
             }
-            
+            Console.WriteLine($"Max = {max}\nMin ={min}");
+
             #endregion
 
         }
