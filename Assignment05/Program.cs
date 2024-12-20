@@ -252,15 +252,26 @@
             //In C#, pass by value creates a copy of the variable and does not affect the original
             //while pass by reference passes the actual reference[location], so changes inside the method affect the original variable
 
-            int a = 10;
-            Console.WriteLine("Before pass by value: " + a);
-            Dummy1(a);
-            Console.WriteLine("After pass by value: " + a); // a remains the same
+            //int a = 10;
+            //Console.WriteLine("Before pass by value: " + a);
+            //Dummy1(a);
+            //Console.WriteLine("After pass by value: " + a); // a remains the same
 
-            int b = 20;
-            Console.WriteLine("Before pass by reference: " + b);
-            Dummy2(ref b);
-            Console.WriteLine("After pass by reference: " + b); // b changes
+            //int b = 20;
+            //Console.WriteLine("Before pass by reference: " + b);
+            //Dummy2(ref b);
+            //Console.WriteLine("After pass by reference: " + b); // b changes
+
+            #endregion
+
+            #region Q12: Write a program in C# Sharp to create a function to calculate the sum of the individual digits of a given number.
+
+            //Console.Write("Enter a number: ");
+            //int number = int.Parse(Console.ReadLine());
+
+            //int sum = SumOfDigits(number);
+
+            //Console.WriteLine("The sum of the digits of the number " + number + " is: " + sum);
 
             #endregion
 
@@ -271,6 +282,17 @@
         }
         static void Dummy2(ref int y) {
             y = 100; 
+        }
+
+        static int SumOfDigits(int num)
+        {
+            int sum = 0;
+            while (num > 0)
+            {
+                sum += num % 10;
+                num /= 10;
+            }
+            return sum;
         }
 
     }
