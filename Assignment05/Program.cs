@@ -92,25 +92,49 @@
 
             #region Q5: Write a program in C# Sharp to find maximum and minimum element in an array
 
-            int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 5, 7, 1 };
+            //int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 5, 7, 1 };
 
-            int max = -999999999;
-            int min = 999999999;
+            //int max = -999999999;
+            //int min = 999999999;
 
-            for (int i = 0; i < arr.Length; i++)
-            {
-                if (max < arr[i]) {
-                    max = arr[i];
-                }
-                if (min > arr[i])
-                {
-                    min = arr[i];
-                }
-            }
-            Console.WriteLine($"Max = {max}\nMin ={min}");
+            //for (int i = 0; i < arr.Length; i++)
+            //{
+            //    if (max < arr[i]) {
+            //        max = arr[i];
+            //    }
+            //    if (min > arr[i])
+            //    {
+            //        min = arr[i];
+            //    }
+            //}
+            //Console.WriteLine($"Max = {max}\nMin ={min}");
 
             #endregion
 
+            #region Q6: Write a program in C# Sharp to find the second largest element in an array.
+
+            int[] arr = { 12, 35, 1, 10, 34, 1 ,55};
+
+            Array.Sort(arr);
+            Array.Reverse(arr);
+
+            int largest = arr[0];
+            int secondLargest = -99999999;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < largest)
+                {
+                    secondLargest = arr[i];
+                    break;
+                }
+            }
+
+           
+                Console.WriteLine("The second largest element is: " + secondLargest);
+            
+
+            #endregion
         }
     }
 }
