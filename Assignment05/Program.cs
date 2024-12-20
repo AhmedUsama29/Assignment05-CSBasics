@@ -42,30 +42,54 @@
 
             #region Q3: Write a program in C# Sharp to merge two arrays of the same size sorted in ascending order.
 
-            int[] arr1 = { 9, 2, 4, 8, 22 };
-            int[] arr2 = { 6, 9, 8, 12, 110 };
-            int[] arr3 = new int[arr1.Length + arr2.Length];
+            //int[] arr1 = { 9, 2, 4, 8, 22 };
+            //int[] arr2 = { 6, 9, 8, 12, 110 };
+            //int[] arr3 = new int[arr1.Length + arr2.Length];
 
-            for (int i = 0; i < arr3.Length; i++)
-            {
-                if (i < arr1.Length)
-                {
-                    arr3[i] = arr1[i];
-                }
-                else
-                {
-                    arr3[i] = arr2[i - arr1.Length];
-                }
-            }
+            //for (int i = 0; i < arr3.Length; i++)
+            //{
+            //    if (i < arr1.Length)
+            //    {
+            //        arr3[i] = arr1[i];
+            //    }
+            //    else
+            //    {
+            //        arr3[i] = arr2[i - arr1.Length];
+            //    }
+            //}
 
-            Array.Sort(arr3);
+            //Array.Sort(arr3);
 
-            for (int i = 0; i < arr3.Length; i++)
-            {
-                Console.WriteLine(arr3[i]);
-            }
+            //for (int i = 0; i < arr3.Length; i++)
+            //{
+            //    Console.WriteLine(arr3[i]);
+            //}
 
             #endregion
+
+            #region Q4: Write a program in C# Sharp to count the frequency of each element of an array.
+
+            int[] arr = { 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 1, 5, 7, 1 };
+            int count = 0;
+            int[] sorted = new int[arr.Length];
+            sorted = arr;
+            Array.Sort(sorted);
+
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                if (sorted[i] == sorted[i + 1])
+                {
+                    count++;
+                }
+                else {
+                    Console.WriteLine($"Number {sorted[i]} is repeated {count + 1} times");
+                    count = 0;
+                }
+
+            }
+            
+            #endregion
+
         }
     }
 }
