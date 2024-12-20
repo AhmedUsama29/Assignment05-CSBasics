@@ -171,17 +171,61 @@
 
             #region Q8: Given a list of space separated words, reverse the order of the words.
 
-            Console.WriteLine("Enter the sentence you want to reverse: ");
-            string str = Console.ReadLine();
+            //Console.WriteLine("Enter the sentence you want to reverse: ");
+            //string str = Console.ReadLine();
 
-            string[] arr = str.Split(' ');
+            //string[] arr = str.Split(' ');
 
-            for (int i = arr.Length - 1; i >= 0; i--)
-            {
-                Console.Write($"{arr[i]} ");
-            }
+            //for (int i = arr.Length - 1; i >= 0; i--)
+            //{
+            //    Console.Write($"{arr[i]} ");
+            //}
 
             #endregion
-        }
+
+            #region Q9: Write a program to create two multidimensional arrays of same size. Accept value from user and store them in first array. Now copy all the elements of first array on second array and print second array.
+
+            
+                Console.Write("Enter the number of rows: ");
+                int rows = int.Parse(Console.ReadLine());
+
+                Console.Write("Enter the number of columns: ");
+                int cols = int.Parse(Console.ReadLine());
+
+                int[,] arr1 = new int[rows, cols];
+                int[,] arr2 = new int[rows, cols];
+
+                Console.WriteLine("Enter values for the first array:");
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Console.Write($"Enter value for arr1[{i},{j}]: ");
+                        arr1[i, j] = int.Parse(Console.ReadLine());
+                    }
+                }
+
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        arr2[i, j] = arr1[i, j];
+                    }
+                }
+
+                Console.WriteLine("\nThe second array is:");
+                for (int i = 0; i < rows; i++)
+                {
+                    for (int j = 0; j < cols; j++)
+                    {
+                        Console.Write(arr2[i, j] + "\t");
+                    }
+                    Console.WriteLine();
+                }
+
+
+        #endregion
+
     }
+}
 }
